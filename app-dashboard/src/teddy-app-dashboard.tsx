@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import singleSpaReact from "single-spa-react";
 import Root from "./root.component";
-import "./styles.css";
+import "./styles/globals.css";
 
 const lifecycles = singleSpaReact({
   React,
