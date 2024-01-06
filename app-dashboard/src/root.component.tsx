@@ -3,8 +3,10 @@ import { useCookies } from "react-cookie";
 import { navigateToUrl } from "single-spa";
 import { router } from "./routes";
 import { RouterProvider } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const Root = () => {
+    const queryClient = new QueryClient();
     const [cookies] = useCookies(["@teddy/user-name"]);
 
     useEffect(() => {
@@ -13,7 +15,11 @@ const Root = () => {
         }
     }, []);
 
-    return <RouterProvider router={router} />;
+    return (
+        <QueryClientProvider client={queryClient}>
+            <RouterProvider router={router} />
+        </QueryClientProvider>
+    );
 };
 
 export default Root;

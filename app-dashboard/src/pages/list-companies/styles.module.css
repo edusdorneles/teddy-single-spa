@@ -1,0 +1,55 @@
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 36px 0px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 32px;
+}
+
+.companyTable {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--secondary-color);
+}
+
+.companyTable tr td,
+.companyTable tr th {
+    border: 1px solid var(--secondary-color);
+}
+
+.companyTable tr th {
+    padding: 12px;
+    color: white;
+    background: var(--primary-color);
+}
+
+.companyTable tr td {
+    padding: 12px;
+    text-align: center;
+}
+
+.companyTable tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.companyTable .companyTableActionButtons {
+    gap: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination {
+    padding-top: 16px;
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+}
