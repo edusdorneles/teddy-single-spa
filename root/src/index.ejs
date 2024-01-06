@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Root Config</title>
+  <script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script>
 
   <style>
     * {
@@ -62,6 +63,7 @@
     {
       "imports": {
         "@teddy/root-config": "//localhost:9000/teddy-root-config.js",
+        "@teddy/app-login": "//localhost:9002/main.js",
         "@teddy/app-dashboard": "//localhost:9001/teddy-app-dashboard.js"
       }
     }
@@ -82,8 +84,8 @@
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
   <% } %>
-
 </head>
+
 <body>
   <noscript>
     You need to enable JavaScript to run this app.
