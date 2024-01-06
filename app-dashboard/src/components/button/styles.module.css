@@ -7,6 +7,7 @@
     color: white;
     cursor: pointer;
     transition: all 0.3s;
+    width: 100%;
 }
 
 .primary:hover {
@@ -26,6 +27,7 @@
     color: white;
     cursor: pointer;
     transition: all 0.3s;
+    width: 100%;
 }
 
 .secondary:hover {
@@ -45,6 +47,7 @@
     color: white;
     cursor: pointer;
     transition: all 0.3s;
+    width: 100%;
 }
 
 .red:hover {

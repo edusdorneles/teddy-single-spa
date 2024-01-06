@@ -14,6 +14,7 @@
 
 .companyTable {
     width: 100%;
+    border-radius: 8px;
     border-collapse: collapse;
     border: 1px solid var(--secondary-color);
 }

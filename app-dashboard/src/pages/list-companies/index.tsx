@@ -2,15 +2,16 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getCompanies } from "../../services";
 import { Loading, PrimaryButton, RedButton, SecondaryButton } from "../../components";
-import { formatDate } from "../../utils";
+import { formatDate, openModalById } from "../../utils";
 import styles from "./styles.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import { ModalDeleteCompany } from "./modal-delete-company";
 
 export const ListCompanies = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const { data, isLoading } = useQuery({
+    const { data, refetch, isLoading } = useQuery({
         queryKey: ["get-companies"],
         queryFn: getCompanies
     });
@@ -49,20 +50,35 @@ export const ListCompanies = () => {
                 </tr>
 
                 {currentData.map((company) => (
-                    <tr>
-                        <td>{company.companyName}</td>
-                        <td>{company.collaboratorsCount}</td>
-                        <td>{company.isActive ? "Sim" : "Não"}</td>
-                        <td>{formatDate(company.lastSubmit)}</td>
-                        <td>{formatDate(company.createdAt)}</td>
+                    <>
+                        <tr>
+                            <td>{company.companyName}</td>
+                            <td>{company.collaboratorsCount}</td>
+                            <td>{company.isActive ? "Sim" : "Não"}</td>
+                            <td>{formatDate(company.lastSubmit)}</td>
+                            <td>{formatDate(company.createdAt)}</td>
 
-                        <td>
-                            <div className={styles.companyTableActionButtons}>
-                                <SecondaryButton>Editar</SecondaryButton>
-                                <RedButton>Deletar</RedButton>
-                            </div>
-                        </td>
-                    </tr>
+                            <td>
+                                <div className={styles.companyTableActionButtons}>
+                                    <SecondaryButton>Editar</SecondaryButton>
+
+                                    <RedButton
+                                        onClick={() =>
+                                            openModalById(`delete-company=${company.id}`)
+                                        }
+                                    >
+                                        Deletar
+                                    </RedButton>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <ModalDeleteCompany
+                            id={company.id}
+                            name={company.companyName}
+                            refetch={refetch}
+                        />
+                    </>
                 ))}
             </table>
 
@@ -71,19 +87,23 @@ export const ListCompanies = () => {
                     Página {currentPage} de {totalPages}
                 </p>
 
-                <PrimaryButton
-                    disabled={currentPage === 1}
-                    onClick={() => handlePageChange(currentPage - 1)}
-                >
-                    Anterior
-                </PrimaryButton>
+                <div>
+                    <PrimaryButton
+                        disabled={currentPage === 1}
+                        onClick={() => handlePageChange(currentPage - 1)}
+                    >
+                        Anterior
+                    </PrimaryButton>
+                </div>
 
-                <SecondaryButton
-                    disabled={currentPage === totalPages}
-                    onClick={() => handlePageChange(currentPage + 1)}
-                >
-                    Próximo
-                </SecondaryButton>
+                <div>
+                    <SecondaryButton
+                        disabled={currentPage === totalPages}
+                        onClick={() => handlePageChange(currentPage + 1)}
+                    >
+                        Próximo
+                    </SecondaryButton>
+                </div>
             </div>
         </div>
     ) : (

@@ -8,3 +8,11 @@ export const getCompanies = async () => {
 
     return data as T.GetCompaniesResponse;
 };
+
+export const deleteCompany = async ({ id }: T.DeleteCompany) => {
+    const { data } = await axios.delete(
+        `https://655cf25525b76d9884fe3153.mockapi.io/v1/external-companies/${id}`
+    );
+
+    return data as T.DeleteCompanyResponse;
+};
