@@ -1,3 +1,3 @@
 export default function Root(props) {
-  return <section>{props.name} is mounted!</section>;
+  return <p className="font-semibold text-xl">{props.name} is mounted!</p>;
 }
