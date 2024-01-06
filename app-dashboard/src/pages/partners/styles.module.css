@@ -1,0 +1,70 @@
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 36px 0px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 32px;
+}
+
+.partnerTable {
+    width: 100%;
+    border-radius: 8px;
+    border-collapse: collapse;
+    border: 1px solid var(--secondary-color);
+}
+
+.partnerTable tr td,
+.partnerTable tr th {
+    border: 1px solid var(--secondary-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100px;
+}
+
+.partnerTable tr th {
+    padding: 12px;
+    color: white;
+    background: var(--primary-color);
+}
+
+.partnerTable tr td {
+    padding: 12px;
+    text-align: center;
+}
+
+.partnerTable tr:nth-of-type(even) {
+    background-color: #dddddd;
+}
+
+.partnerTable .partnerTableActionButtons {
+    gap: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tableBottom {
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addCompany {
+    width: 240px;
+}
+
+.pagination {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+}
