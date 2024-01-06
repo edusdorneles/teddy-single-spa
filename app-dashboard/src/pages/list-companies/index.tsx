@@ -1,19 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getCompanies } from "../../services";
 import { Loading, PrimaryButton, RedButton, SecondaryButton } from "../../components";
 import { formatDate } from "../../utils";
-import { FaEdit, FaTrash } from "react-icons/fa";
 import styles from "./styles.module.css";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const ListCompanies = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const { data, isLoading } = useQuery({
         queryKey: ["get-companies"],
         queryFn: getCompanies
     });
 
-    const itemsPerPage = 5;
+    const itemsPerPage = 10;
     const [currentPage, setCurrentPage] = useState(1);
+
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const page = parseInt(params.get("page")) || 1;
+        setCurrentPage(page);
+    }, [location.search]);
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -22,6 +31,7 @@ export const ListCompanies = () => {
 
     const handlePageChange = (newPage: number) => {
         setCurrentPage(newPage);
+        navigate(`?page=${newPage}`);
     };
 
     return !isLoading ? (
