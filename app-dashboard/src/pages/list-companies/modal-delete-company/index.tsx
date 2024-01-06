@@ -1,9 +1,10 @@
 import { useMutation } from "@tanstack/react-query";
 import { Modal, RedButton } from "../../../components";
-import styles from "./styles.module.css";
-import * as T from "./types";
 import { deleteCompany } from "../../../services";
 import { closeModalById } from "../../../utils";
+import { toast } from "react-toastify";
+import styles from "./styles.module.css";
+import * as T from "./types";
 
 export const ModalDeleteCompany = ({ id, name, refetch }: T.Props) => {
     const { mutate, isPending } = useMutation({
@@ -11,11 +12,11 @@ export const ModalDeleteCompany = ({ id, name, refetch }: T.Props) => {
         mutationFn: () => deleteCompany({ id }),
         onSuccess: () => {
             refetch();
-            alert("Empresa deletada com sucesso.");
+            toast("Empresa deletada com sucesso.", { type: "success" });
             closeModalById(`delete-company=${id}`);
         },
         onError: () => {
-            alert("Erro ao deletar empresa.");
+            toast("Erro ao deletar empresa.", { type: "error" });
         }
     });
 

@@ -4,6 +4,7 @@ import { GrayInput, GraySelect, Modal, SecondaryButton } from "../../../componen
 import { editCompany } from "../../../services";
 import { closeModalById } from "../../../utils";
 import { Controller, useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import styles from "./styles.module.css";
 import * as T from "./types";
 
@@ -25,11 +26,11 @@ export const ModalEditCompany = ({ id, name, collaborators, isActive, refetch }:
         onSuccess: () => {
             reset();
             refetch();
-            alert("Empresa editada com sucesso.");
+            toast("Empresa editada com sucesso.", { type: "success" });
             closeModalById(`edit-company=${id}`);
         },
         onError: () => {
-            alert("Erro ao editar empresa.");
+            toast("Erro ao editar empresa.", { type: "error" });
         }
     });
 
