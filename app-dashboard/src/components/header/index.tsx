@@ -14,7 +14,9 @@ export const Header = () => {
     return (
         <header className={styles.container}>
             <div className={styles.contentContainer}>
-                <img className={styles.logo} src={Logo} alt="Logo Teddy Open Finance" />
+                <Link to={ROUTES.HOME}>
+                    <img className={styles.logo} src={Logo} alt="Logo Teddy Open Finance" />
+                </Link>
 
                 <ul className={styles.menu}>
                     <Link to={ROUTES.REGISTER_PARTNER}>
