@@ -6,6 +6,7 @@ import { formatDate, openModalById } from "../../utils";
 import styles from "./styles.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ModalDeleteCompany } from "./modal-delete-company";
+import { ModalEditCompany } from "./modal-edit-company";
 
 export const ListCompanies = () => {
     const navigate = useNavigate();
@@ -60,7 +61,11 @@ export const ListCompanies = () => {
 
                             <td>
                                 <div className={styles.companyTableActionButtons}>
-                                    <SecondaryButton>Editar</SecondaryButton>
+                                    <SecondaryButton
+                                        onClick={() => openModalById(`edit-company=${company.id}`)}
+                                    >
+                                        Editar
+                                    </SecondaryButton>
 
                                     <RedButton
                                         onClick={() =>
@@ -77,6 +82,14 @@ export const ListCompanies = () => {
                             id={company.id}
                             name={company.companyName}
                             refetch={refetch}
+                        />
+
+                        <ModalEditCompany
+                            id={company.id}
+                            refetch={refetch}
+                            name={company.companyName}
+                            isActive={company.isActive}
+                            collaborators={company.collaboratorsCount}
                         />
                     </>
                 ))}

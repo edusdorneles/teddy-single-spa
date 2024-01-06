@@ -7,7 +7,7 @@
     position: absolute;
     width: 430px;
     height: max-content;
-    background: #eee;
+    background-color: white;
     border: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;

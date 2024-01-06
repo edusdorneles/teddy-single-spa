@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.label {
+    font-size: 14px;
+}
+
+.gray {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+}

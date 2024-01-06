@@ -9,6 +9,22 @@ export type GetCompaniesResponse = [
     }
 ];
 
+export type EditCompany = {
+    id: number;
+    name?: string;
+    collaborators?: number;
+    isActive?: string;
+};
+
+export type EditCompanyResponse = {
+    id: string;
+    createdAt: Date;
+    companyName: string;
+    collaboratorsCount: number;
+    isActive: boolean;
+    lastSubmit: Date;
+};
+
 export type DeleteCompany = {
     id: number;
 };
