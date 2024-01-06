@@ -9,7 +9,7 @@ import { ModalDeleteCompany } from "./modal-delete-company";
 import { ModalEditCompany } from "./modal-edit-company";
 import { ModalRegisterCompany } from "./modal-register-company";
 
-export const ListCompanies = () => {
+export const Companies = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -39,7 +39,7 @@ export const ListCompanies = () => {
 
     return !isLoading ? (
         <div className={styles.container}>
-            <h1 className={styles.title}>Listar empresas</h1>
+            <h1 className={styles.title}>Empresas</h1>
 
             <table className={styles.companyTable}>
                 <tr>

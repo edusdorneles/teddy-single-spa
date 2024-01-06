@@ -1,14 +1,7 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import { ROUTES } from "../utils/routes";
 import { Layout } from "../components";
-import {
-    About,
-    Home,
-    ListCompanies,
-    ListPartners,
-    RegisterCompany,
-    RegisterPartner
-} from "../pages";
+import { About, Home, Partners, Companies } from "../pages";
 
 export const router = createBrowserRouter([
     {
@@ -24,20 +17,12 @@ export const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: ROUTES.REGISTER_PARTNER,
-                element: <RegisterPartner />
+                path: ROUTES.PARTNERS,
+                element: <Partners />
             },
             {
-                path: ROUTES.LIST_PARTNERS,
-                element: <ListPartners />
-            },
-            {
-                path: ROUTES.REGISTER_COMPANY,
-                element: <RegisterCompany />
-            },
-            {
-                path: ROUTES.LIST_COMPANIES,
-                element: <ListCompanies />
+                path: ROUTES.COMPANIES,
+                element: <Companies />
             },
             {
                 path: ROUTES.ABOUT,

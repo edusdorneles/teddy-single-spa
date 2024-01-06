@@ -19,20 +19,12 @@ export const Header = () => {
                 </Link>
 
                 <ul className={styles.menu}>
-                    <Link to={ROUTES.REGISTER_PARTNER}>
-                        <li>Cadastrar parceiro</li>
+                    <Link to={ROUTES.PARTNERS}>
+                        <li>Parceiros</li>
                     </Link>
 
-                    <Link to={ROUTES.LIST_PARTNERS}>
-                        <li>Listar parceiros</li>
-                    </Link>
-
-                    <Link to={ROUTES.REGISTER_COMPANY}>
-                        <li>Cadastrar empresa</li>
-                    </Link>
-
-                    <Link to={ROUTES.LIST_COMPANIES}>
-                        <li>Listar empresas</li>
+                    <Link to={ROUTES.COMPANIES}>
+                        <li>Empresas</li>
                     </Link>
 
                     <Link to={ROUTES.ABOUT}>
