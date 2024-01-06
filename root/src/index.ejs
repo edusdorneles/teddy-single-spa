@@ -6,6 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Root Config</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+  </style>
+
   <!--
     Remove this if you only support browsers that support async/await.
     This is needed by babel to share largeish helper code for compiling async/await in older
@@ -34,7 +46,9 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js"
+        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
+        "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js",
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js"
       }
     }
   </script>
@@ -47,8 +61,8 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
-        "@teddy/root-config": "//localhost:9000/teddy-root-config.js"
+        "@teddy/root-config": "//localhost:9000/teddy-root-config.js",
+        "@teddy/app-dashboard": "//localhost:9001/teddy-app-dashboard.js"
       }
     }
   </script>
