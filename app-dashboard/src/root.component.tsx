@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { useCookies } from "react-cookie";
 import { navigateToUrl } from "single-spa";
+import { router } from "./routes";
+import { RouterProvider } from "react-router-dom";
 
-export default function Root(props) {
+const Root = () => {
   const [cookies] = useCookies(['@teddy/user-name']);
 
   useEffect(() => {
@@ -11,5 +13,8 @@ export default function Root(props) {
     }
   }, []);
 
-  return <p className="font-semibold text-xl">{props.name} is mounted!</p>;
+  // @ts-ignore
+  return <RouterProvider router={router} />;
 }
+
+export default Root;
