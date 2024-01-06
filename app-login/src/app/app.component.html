@@ -1,1 +1,52 @@
-<p class="font-semibold text-xl">{{ title }} is mounted!</p>
+<main
+    class="bg-secondary w-full h-screen bg-center bg-no-repeat bg-cover flex items-center justify-center"
+>
+    <section class="w-[520px] bg-white p-6 rounded-lg">
+        <form class="flex-col flex items-center justify-center gap-4" (ngSubmit)="onSubmit()">
+            <h1 class="font-semibold text-xl">Login</h1>
+
+            <p>Insira seus dados para entrar no sistema</p>
+
+            <input
+                required
+                type="text"
+                [(ngModel)]="user"
+                placeholder="Usuário:"
+                [ngModelOptions]="{ standalone: true }"
+                class="login-form-input px-4 py-3 w-full outline-none border border-gray-300 rounded-lg"
+            />
+
+            <input
+                required
+                type="password"
+                placeholder="Senha:"
+                [(ngModel)]="password"
+                [ngModelOptions]="{ standalone: true }"
+                class="login-form-input px-4 py-3 w-full outline-none border border-gray-300 rounded-lg"
+            />
+
+            <div class="gap-2 flex items-center justify-start w-full">
+                <input
+                    type="checkbox"
+                    class="cursor-pointer"
+                    id="login-remember-user"
+                    [(ngModel)]="rememberUser"
+                    [ngModelOptions]="{ standalone: true }"
+                />
+
+                <label for="login-remember-user" class="text-sm cursor-pointer">
+                    Manter conectado
+                </label>
+            </div>
+
+            <button
+                type="submit"
+                class="w-full bg-primary py-3 text-white hover:bg-hover-primary transition-all outline-none font-semibold rounded-lg"
+            >
+                Entrar
+            </button>
+
+            <p *ngIf="error" class="text-sm text-red-600 pt-3">{{ error }}</p>
+        </form>
+    </section>
+</main>
