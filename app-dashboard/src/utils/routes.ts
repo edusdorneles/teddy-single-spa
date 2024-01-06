@@ -5,4 +5,4 @@ export const ROUTES = {
     REGISTER_COMPANY: "/dashboard/register-company",
     LIST_COMPANIES: "/dashboard/list-companies",
     ABOUT: "/dashboard/about"
-}
+};

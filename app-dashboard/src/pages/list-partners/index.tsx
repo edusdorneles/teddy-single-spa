@@ -1,3 +1,3 @@
 export const ListPartners = () => {
-    return <>ListPartners!</>
-}
+    return <>ListPartners!</>;
+};

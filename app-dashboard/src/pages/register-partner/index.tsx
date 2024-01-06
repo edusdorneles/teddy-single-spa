@@ -1,3 +1,3 @@
 export const RegisterPartner = () => {
-    return <>RegisterPartner!</>
-}
+    return <>RegisterPartner!</>;
+};

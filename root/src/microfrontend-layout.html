@@ -1,15 +1,15 @@
 <single-spa-router>
-  <main>
-    <route default>
-      <redirect from="/" to="/login" />
-    </route>
+    <main>
+        <route default>
+            <redirect from="/" to="/login" />
+        </route>
 
-    <route path="login">
-      <application name="@teddy/app-login"></application>
-    </route>
+        <route path="login">
+            <application name="@teddy/app-login"></application>
+        </route>
 
-    <route path="dashboard">
-      <application name="@teddy/app-dashboard"></application>
-    </route>
-  </main>
+        <route path="dashboard">
+            <application name="@teddy/app-dashboard"></application>
+        </route>
+    </main>
 </single-spa-router>

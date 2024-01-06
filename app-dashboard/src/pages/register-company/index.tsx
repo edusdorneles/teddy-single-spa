@@ -1,3 +1,3 @@
 export const RegisterCompany = () => {
-    return <>RegisterCompany!</>
-}
+    return <>RegisterCompany!</>;
+};

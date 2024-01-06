@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { navigateToUrl } from 'single-spa';
+import { Component } from "@angular/core";
+import { navigateToUrl } from "single-spa";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: "app-root",
+    templateUrl: "./app.component.html",
+    styleUrl: "./app.component.css"
 })
 export class AppComponent {
     user = "";
@@ -21,10 +21,10 @@ export class AppComponent {
 
     onSubmit() {
         if (this.user.length > 0 && this.password.length > 0) {
-            if(this.rememberUser) {
-              document.cookie = `@teddy/user-name=${this.user}`;
+            if (this.rememberUser) {
+                document.cookie = `@teddy/user-name=${this.user}`;
             } else {
-              localStorage.setItem("@teddy/user-name", this.user);
+                localStorage.setItem("@teddy/user-name", this.user);
             }
 
             this.resetFields();

@@ -1,6 +1,13 @@
-import {Navigate, createBrowserRouter} from "react-router-dom"
-import { ROUTES } from "../utils/routes"
-import { About, Home, ListCompanies, ListPartners, RegisterCompany, RegisterPartner } from "../pages"
+import { Navigate, createBrowserRouter } from "react-router-dom";
+import { ROUTES } from "../utils/routes";
+import {
+    About,
+    Home,
+    ListCompanies,
+    ListPartners,
+    RegisterCompany,
+    RegisterPartner
+} from "../pages";
 
 export const router = createBrowserRouter([
     {
@@ -31,4 +38,4 @@ export const router = createBrowserRouter([
         path: ROUTES.ABOUT,
         element: <About />
     }
-])
+]);
