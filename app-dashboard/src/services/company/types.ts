@@ -9,6 +9,21 @@ export type GetCompaniesResponse = [
     }
 ];
 
+export type RegisterCompany = {
+    name?: string;
+    collaborators?: number;
+    isActive?: string;
+};
+
+export type RegisterCompanyResponse = {
+    id: string;
+    createdAt: Date;
+    companyName: string;
+    collaboratorsCount: number;
+    isActive: boolean;
+    lastSubmit: Date;
+};
+
 export type EditCompany = {
     id: number;
     name?: string;

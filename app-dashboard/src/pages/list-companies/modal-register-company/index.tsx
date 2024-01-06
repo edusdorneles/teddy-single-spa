@@ -1,36 +1,29 @@
-import { useEffect } from "react";
-import { useMutation } from "@tanstack/react-query";
-import { GrayInput, GraySelect, Modal, SecondaryButton } from "../../../components";
-import { editCompany } from "../../../services";
-import { closeModalById } from "../../../utils";
-import { Controller, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { useMutation } from "@tanstack/react-query";
+import { useForm, Controller } from "react-hook-form";
+import { Modal, GrayInput, GraySelect, SecondaryButton } from "../../../components";
+import { registerCompany } from "../../../services";
+import { closeModalById } from "../../../utils";
 import styles from "./styles.module.css";
 import * as T from "./types";
 
-export const ModalEditCompany = ({ id, name, collaborators, isActive, refetch }: T.Props) => {
-    const {
-        reset,
-        control,
-        setValue,
-        handleSubmit,
-        formState: { errors }
-    } = useForm<T.Schema>({
-        defaultValues: { name: name, collaborators: collaborators, isActive: isActive }
+export const ModalRegisterCompany = ({ refetch }) => {
+    const { reset, control, handleSubmit } = useForm<T.Schema>({
+        defaultValues: { isActive: "true" }
     });
 
     const { mutate, isPending } = useMutation({
-        mutationKey: ["edit-company"],
+        mutationKey: ["register-company"],
         mutationFn: ({ name, collaborators, isActive }: T.MutationProps) =>
-            editCompany({ id, name, collaborators, isActive }),
+            registerCompany({ name, collaborators, isActive }),
         onSuccess: () => {
             reset();
             refetch();
-            toast("Empresa editada com sucesso.", { type: "success" });
-            closeModalById(`edit-company=${id}`);
+            toast("Empresa cadastrada com sucesso.", { type: "success" });
+            closeModalById("register-company");
         },
         onError: () => {
-            toast("Erro ao editar empresa.", { type: "error" });
+            toast("Erro ao cadastrar empresa.", { type: "error" });
         }
     });
 
@@ -42,14 +35,8 @@ export const ModalEditCompany = ({ id, name, collaborators, isActive, refetch }:
         mutate({ name: data.name, collaborators: data.collaborators, isActive: data.isActive });
     };
 
-    useEffect(() => {
-        setValue("name", name);
-        setValue("collaborators", collaborators);
-        setValue("isActive", isActive);
-    }, [name, collaborators, isActive]);
-
     return (
-        <Modal id={`edit-company=${id}`} title="Editar empresa">
+        <Modal id="register-company" title="Cadastrar empresa">
             <form onSubmit={handleSubmit(onSubmit)} className={styles.container}>
                 <Controller
                     name="name"
@@ -96,7 +83,7 @@ export const ModalEditCompany = ({ id, name, collaborators, isActive, refetch }:
 
                 <div className={styles.actionButtons}>
                     <SecondaryButton type="submit" disabled={isPending}>
-                        Editar
+                        Cadastrar
                     </SecondaryButton>
                 </div>
             </form>

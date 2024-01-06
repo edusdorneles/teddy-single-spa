@@ -57,3 +57,23 @@
 .red:disabled {
     opacity: 0.5;
 }
+
+.green {
+    padding: 10px;
+    background-color: #1c8528;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.green:hover {
+    background-color: #15631e;
+}
+
+.green:disabled {
+    opacity: 0.5;
+}

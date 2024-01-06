@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getCompanies } from "../../services";
-import { Loading, PrimaryButton, RedButton, SecondaryButton } from "../../components";
+import { GreenButton, Loading, PrimaryButton, RedButton, SecondaryButton } from "../../components";
 import { formatDate, openModalById } from "../../utils";
 import styles from "./styles.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ModalDeleteCompany } from "./modal-delete-company";
 import { ModalEditCompany } from "./modal-edit-company";
+import { ModalRegisterCompany } from "./modal-register-company";
 
 export const ListCompanies = () => {
     const navigate = useNavigate();
@@ -95,29 +96,39 @@ export const ListCompanies = () => {
                 ))}
             </table>
 
-            <div className={styles.pagination}>
-                <p>
-                    Página {currentPage} de {totalPages}
-                </p>
-
-                <div>
-                    <PrimaryButton
-                        disabled={currentPage === 1}
-                        onClick={() => handlePageChange(currentPage - 1)}
-                    >
-                        Anterior
-                    </PrimaryButton>
+            <div className={styles.tableBottom}>
+                <div className={styles.addCompany}>
+                    <GreenButton onClick={() => openModalById("register-company")}>
+                        Cadastrar empresa
+                    </GreenButton>
                 </div>
 
-                <div>
-                    <SecondaryButton
-                        disabled={currentPage === totalPages}
-                        onClick={() => handlePageChange(currentPage + 1)}
-                    >
-                        Próximo
-                    </SecondaryButton>
+                <div className={styles.pagination}>
+                    <p>
+                        Página {currentPage} de {totalPages}
+                    </p>
+
+                    <div>
+                        <PrimaryButton
+                            disabled={currentPage === 1}
+                            onClick={() => handlePageChange(currentPage - 1)}
+                        >
+                            Anterior
+                        </PrimaryButton>
+                    </div>
+
+                    <div>
+                        <SecondaryButton
+                            disabled={currentPage === totalPages}
+                            onClick={() => handlePageChange(currentPage + 1)}
+                        >
+                            Próximo
+                        </SecondaryButton>
+                    </div>
                 </div>
             </div>
+
+            <ModalRegisterCompany refetch={refetch} />
         </div>
     ) : (
         <Loading />

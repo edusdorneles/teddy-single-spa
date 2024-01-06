@@ -1,6 +1,17 @@
 import axios from "axios";
 import * as T from "./types";
 
+export const registerCompany = async ({ name, collaborators, isActive }: T.RegisterCompany) => {
+    const companyIsActive = isActive === "true" ? true : false;
+
+    const { data } = await axios.post(
+        "https://655cf25525b76d9884fe3153.mockapi.io/v1/external-companies",
+        { companyName: name, collaboratorsCount: collaborators, isActive: companyIsActive }
+    );
+
+    return data as T.RegisterCompanyResponse;
+};
+
 export const getCompanies = async () => {
     const { data } = await axios.get(
         "https://655cf25525b76d9884fe3153.mockapi.io/v1/external-companies"
@@ -17,7 +28,7 @@ export const editCompany = async ({ id, name, collaborators, isActive }: T.EditC
         { companyName: name, collaboratorsCount: collaborators, isActive: companyIsActive }
     );
 
-    return data as T.DeleteCompanyResponse;
+    return data as T.EditCompanyResponse;
 };
 
 export const deleteCompany = async ({ id }: T.DeleteCompany) => {

@@ -46,8 +46,18 @@
     justify-content: center;
 }
 
-.pagination {
+.tableBottom {
     padding-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addCompany {
+    width: 240px;
+}
+
+.pagination {
     width: 100%;
     display: flex;
     gap: 12px;

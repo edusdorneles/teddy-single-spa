@@ -24,3 +24,11 @@ export const RedButton = ({ children, ...props }: T.Props) => {
         </button>
     );
 };
+
+export const GreenButton = ({ children, ...props }: T.Props) => {
+    return (
+        <button {...props} className={styles.green}>
+            {children}
+        </button>
+    );
+};
