@@ -8,6 +8,7 @@ import { ModalDeletePartner } from "./modal-delete-partner";
 import { ModalRegisterPartner } from "./modal-register-partner";
 import styles from "./styles.module.css";
 import { ModalEditPartner } from "./modal-edit-partner";
+import { toast } from "react-toastify";
 
 export const Partners = () => {
     const navigate = useNavigate();
@@ -35,6 +36,11 @@ export const Partners = () => {
     const handlePageChange = (newPage: number) => {
         setCurrentPage(newPage);
         navigate(`?page=${newPage}`);
+    };
+
+    const copyTablePageToClipboard = () => {
+        navigator.clipboard.writeText(window.location.href);
+        toast("Link copiado para a área de transferência.", { type: "success" });
     };
 
     return !isLoading ? (
@@ -104,6 +110,10 @@ export const Partners = () => {
                     <GreenButton onClick={() => openModalById("register-partner")}>
                         Cadastrar parceiro
                     </GreenButton>
+
+                    <PrimaryButton onClick={() => copyTablePageToClipboard()}>
+                        Compartilhar
+                    </PrimaryButton>
                 </div>
 
                 <div className={styles.pagination}>

@@ -54,7 +54,9 @@
 }
 
 .addCompany {
-    width: 240px;
+    width: 420px;
+    display: flex;
+    gap: 8px;
 }
 
 .pagination {

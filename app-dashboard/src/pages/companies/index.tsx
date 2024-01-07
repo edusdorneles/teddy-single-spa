@@ -8,6 +8,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { ModalDeleteCompany } from "./modal-delete-company";
 import { ModalEditCompany } from "./modal-edit-company";
 import { ModalRegisterCompany } from "./modal-register-company";
+import { toast } from "react-toastify";
 
 export const Companies = () => {
     const navigate = useNavigate();
@@ -35,6 +36,11 @@ export const Companies = () => {
     const handlePageChange = (newPage: number) => {
         setCurrentPage(newPage);
         navigate(`?page=${newPage}`);
+    };
+
+    const copyTablePageToClipboard = () => {
+        navigator.clipboard.writeText(window.location.href);
+        toast("Link copiado para a área de transferência.", { type: "success" });
     };
 
     return !isLoading ? (
@@ -101,6 +107,10 @@ export const Companies = () => {
                     <GreenButton onClick={() => openModalById("register-company")}>
                         Cadastrar empresa
                     </GreenButton>
+
+                    <PrimaryButton onClick={() => copyTablePageToClipboard()}>
+                        Compartilhar
+                    </PrimaryButton>
                 </div>
 
                 <div className={styles.pagination}>
