@@ -1,9 +1,10 @@
 <h1 align="center">Teddy Single-Spa</h1>
 
-<h2>Descrição:</h2>
+<h3>Descrição:</h3>
+
 <p>Plataforma desenvolvida com React, Angular e Single-Spa para gestão de parceiros e empresas externas.</p>
 
-<h2>Rodar o projeto:</h2>
+<h3>Rodar o projeto:</h3>
 
 ```bash
 # Clone o repositório
@@ -19,7 +20,7 @@ $ yarn start
 # O servidor iniciará na porta: 9000. Acesse http://localhost:9000/
 ```
 
-<h2>Rodar o projeto - Time LOGIN:</h2>
+<h3>Rodar o projeto - Time LOGIN:</h3>
 
 ```bash
 # Acesse a pasta app-login
@@ -31,7 +32,7 @@ $ yarn serve
 # O servidor iniciará na porta: 9001. Acesse http://localhost:9000/login
 ```
 
-<h2>Rodar o projeto - Time DASHBOARD:</h2>
+<h3>Rodar o projeto - Time DASHBOARD:</h3>
 
 ```bash
 # Acesse a pasta app-login
@@ -52,3 +53,10 @@ $ yarn start
 $ document.cookie = "@teddy/user-name=DASHBOARD";
 # Acesse http://localhost:9000/dashboard
 ```
+
+<h3 id="autor">Autor</h3>
+<img src="https://avatars.githubusercontent.com/dududornelees" height="100" />
+
+Made with 💙 by Eduardo Dorneles 👋.
+
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dududornelees/) [![Website Badge](https://img.shields.io/badge/website-14141C?style=for-the-badge&logo=About.me&logoColor=white)](https://dududornelees.com.br/)
