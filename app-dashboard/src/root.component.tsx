@@ -11,7 +11,7 @@ const Root = () => {
     const [cookies] = useCookies(["@teddy/user-name"]);
 
     useEffect(() => {
-        if (!cookies["@teddy/user-name"] && !localStorage.getItem("@teddy/user-name")) {
+        if (!cookies["@teddy/user-name"] && !sessionStorage.getItem("@teddy/user-name")) {
             navigateToUrl("/login");
         }
     }, []);

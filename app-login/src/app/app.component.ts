@@ -24,7 +24,7 @@ export class AppComponent {
             if (this.rememberUser) {
                 document.cookie = `@teddy/user-name=${this.user}`;
             } else {
-                localStorage.setItem("@teddy/user-name", this.user);
+                sessionStorage.setItem("@teddy/user-name", this.user);
             }
 
             this.resetFields();

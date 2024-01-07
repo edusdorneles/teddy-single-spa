@@ -6,7 +6,7 @@ import { navigateToUrl } from "single-spa";
 
 export const Header = () => {
     const signOut = () => {
-        localStorage.clear();
+        sessionStorage.clear();
         clearAllCookies();
         navigateToUrl("/login");
     };

@@ -10,7 +10,7 @@ export const Home = () => {
                 Olá,{" "}
                 {cookies["@teddy/user-name"]
                     ? cookies["@teddy/user-name"]
-                    : localStorage.getItem("@teddy/user-name")}
+                    : sessionStorage.getItem("@teddy/user-name")}
                 !
             </h1>
         </main>
