@@ -47,7 +47,7 @@ $ yarn start
 
 ```bash
 # No seu navegador, acesse http://localhost:9000 e abra o inspecionar
-# Acesse a aba "Applicação"
+# Acesse a aba "Console"
 # Adicione um usuário aos cookies
 $ document.cookie = "@teddy/user-name=DASHBOARD";
 # Acesse http://localhost:9000/dashboard
