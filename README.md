@@ -55,7 +55,8 @@ $ document.cookie = "@teddy/user-name=DASHBOARD";
 
 <h3>Pendências:</h3>
 <ul>
-    <li>Responsividade (1 dia para finalizar).</li>
+    <li>Responsividade (Meio dia para finalizar).</li>
+    <li>Adicionar testes unitários (Meio dia para finalizar).</li>
     <li>Containerizar o projeto (1 dia para finalizar).</li>
     <li>Fazer deploy na Vercel (2 dia para finalizar).</li>
 </ul>
