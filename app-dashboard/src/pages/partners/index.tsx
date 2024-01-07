@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { ModalDeletePartner } from "./modal-delete-partner";
 import { ModalRegisterPartner } from "./modal-register-partner";
 import styles from "./styles.module.css";
+import { ModalEditPartner } from "./modal-edit-partner";
 
 export const Partners = () => {
     const navigate = useNavigate();
@@ -83,6 +84,17 @@ export const Partners = () => {
                         </tr>
 
                         <ModalDeletePartner id={partner.id} name={partner.name} refetch={refetch} />
+
+                        <ModalEditPartner
+                            id={partner.id}
+                            name={partner.name}
+                            description={partner.description}
+                            repositoryGit={partner.repositoryGit}
+                            urlDoc={partner.urlDoc}
+                            projects={partner.projects}
+                            clients={partner.clients}
+                            refetch={refetch}
+                        />
                     </>
                 ))}
             </table>

@@ -25,6 +25,23 @@ export const getPartners = async () => {
     return data as T.GetPartnersResponse;
 };
 
+export const editPartner = async ({
+    id,
+    name,
+    description,
+    repositoryGit,
+    urlDoc,
+    clients,
+    projects
+}: T.EditPartner) => {
+    const { data } = await axios.put(
+        `https://644060ba792fe886a88de1b9.mockapi.io/v1/test/partners/${id}`,
+        { name, description, repositoryGit, urlDoc, clients, projects }
+    );
+
+    return data as T.EditPartnerResponse;
+};
+
 export const deletePartner = async ({ id }: T.DeletePartner) => {
     const { data } = await axios.delete(
         `https://644060ba792fe886a88de1b9.mockapi.io/v1/test/partners/${id}`

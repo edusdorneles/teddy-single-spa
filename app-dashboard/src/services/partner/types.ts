@@ -20,6 +20,26 @@ export type GetPartnersResponse = [
     }
 ];
 
+export type EditPartner = {
+    id: number;
+    name: string;
+    description: string;
+    repositoryGit: string;
+    urlDoc: string;
+    clients: string;
+    projects: string;
+};
+
+export type EditPartnerResponse = {
+    id: number;
+    name: string;
+    description: string;
+    repositoryGit: string;
+    urlDoc: string;
+    clients: string;
+    projects: string;
+};
+
 export type DeletePartner = {
     id: number;
 };

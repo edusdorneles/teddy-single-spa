@@ -1,19 +1,29 @@
 export type Props = {
     id: number;
     name: string;
-    collaborators: number;
-    isActive: any;
+    description: string;
+    repositoryGit: string;
+    urlDoc: string;
+    projects: string;
+    clients: string;
     refetch: () => void;
 };
 
 export type MutationProps = {
     name: string;
-    collaborators: number;
-    isActive: string;
+    description: string;
+    repositoryGit: string;
+    urlDoc: string;
+    projects: string;
+    clients: string;
 };
 
 export type Schema = {
     name: string;
-    collaborators: number;
-    isActive: string;
+    description: string;
+    repositoryGit: string;
+    urlDoc: string;
+    projects: string;
+    clients: string;
+    createdAt: Date;
 };

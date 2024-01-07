@@ -39,7 +39,7 @@ export const Companies = () => {
 
     return !isLoading ? (
         <div className={styles.container}>
-            <h1 className={styles.title}>Empresas</h1>
+            <h1 className={styles.title}>Empresas externas</h1>
 
             <table className={styles.companyTable}>
                 <tr>

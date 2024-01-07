@@ -24,7 +24,7 @@ export const Header = () => {
                     </Link>
 
                     <Link to={ROUTES.COMPANIES}>
-                        <li>Empresas</li>
+                        <li>Empresas externas</li>
                     </Link>
 
                     <Link to={ROUTES.ABOUT}>
