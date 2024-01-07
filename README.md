@@ -1,7 +1,6 @@
 <h1 align="center">Teddy Single-Spa</h1>
 
 <h3>Descrição:</h3>
-
 <p>Plataforma desenvolvida com React, Angular e Single-Spa para gestão de parceiros e empresas externas.</p>
 
 <h3>Rodar o projeto:</h3>
@@ -54,7 +53,14 @@ $ document.cookie = "@teddy/user-name=DASHBOARD";
 # Acesse http://localhost:9000/dashboard
 ```
 
-<h3 id="autor">Autor</h3>
+<h3>Pendências:</h3>
+<ul>
+    <li>Responsividade (1 dia para finalizar).</li>
+    <li>Containerizar o projeto (1 dia para finalizar).</li>
+    <li>Fazer deploy na Vercel (2 dia para finalizar).</li>
+</ul>
+
+<h3>Autor:</h3>
 <img src="https://avatars.githubusercontent.com/dududornelees" height="100" />
 
 Made with 💙 by Eduardo Dorneles 👋.
